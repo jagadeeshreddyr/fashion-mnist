@@ -1,19 +1,57 @@
-# Fashion MNIST Classification
+# MNIST Digit Classification with PyTorch
 
-In this project, a machine learning model was developed and trained using the Fashion MNIST dataset. The Fashion MNIST dataset comprises grayscale images of various clothing items, each categorized into one of 10 classes. The primary objective of the project was to create a model capable of accurately classifying these clothing items based on their images.
+This project implements a neural network using PyTorch to classify handwritten digits from the MNIST dataset. It includes training, evaluation, and visualization components.
 
-## Model Training
+## Requirements
 
-The machine learning model was trained on the Fashion MNIST dataset, which includes 60,000 training images. Throughout the training process, the model learns to recognize patterns and features in the images that are indicative of different clothing items. This learning is facilitated by optimization algorithms such as gradient descent, which adjusts the model's parameters to minimize prediction errors.
+- Python 3.x
+- PyTorch
+- NumPy
+- Matplotlib
+- OpenCV
 
-## Performance Metrics
+## Installation
 
-Following model training, its performance was evaluated on both the training and test datasets. The training set accuracy, indicating the model's performance on the data it was trained on, was measured at 0.97. This suggests that the model correctly classified 97% of the images in the training set.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/mnist-digit-classification.git
+    cd mnist-digit-classification
+    ```
 
-Conversely, the test set accuracy assesses the model's performance on unseen data. In this project, the test set accuracy was found to be 0.90, implying that the model accurately classified 90% of the images in the test set.
+2. Install the required packages:
+    ```bash
+    pip install torch torchvision numpy matplotlib opencv-python
+    ```
 
-## Generalization
+## Usage
 
-The obtained metrics from both the training and test sets offer insights into the model's ability to generalize to new, unseen data. While a high training set accuracy suggests effective learning of underlying patterns, the test set accuracy serves as a more reliable indicator of the model's true performance on unseen data.
+1. **Training and Evaluating the Model**:
+    - Load and preprocess the MNIST dataset.
+    - Define, compile, and train the neural network model.
+    - Evaluate the model and report the accuracy.
 
-In this scenario, the high test set accuracy of 0.90 demonstrates the model's capability to generalize well to new images of clothing items. This suggests its potential for accurately classifying clothing items in real-world scenarios, making it a valuable tool for applications such as e-commerce, inventory management, and fashion recommendation systems.
+2. **Visualize Weights of the First Layer**:
+    - Visualize the weights of the first layer after training.
+
+3. **Predict Custom Digit**:
+    - Preprocess custom digit images to the required input size (28x28) using OpenCV.
+    - Predict the digit using the trained model.
+
+## Explanation
+
+1. **Model Architecture**:
+    - The model is a simple feedforward neural network with three fully connected layers.
+    - Input layer: 784 units (28x28 pixels).
+    - Hidden layers: 128 and 64 units with ReLU activation.
+    - Output layer: 10 units for 10 digit classes (0-9).
+
+2. **Training Process**:
+    - The model is trained using the Adam optimizer and cross-entropy loss.
+    - Training is performed for 5 epochs with a validation split.
+    - Loss and accuracy are printed during training and evaluation.
+
+3. **Visualization**:
+    - The weights of the first layer are visualized after training.
+    - Custom digit images can be inputted, and the model will predict the digit.
+
+
